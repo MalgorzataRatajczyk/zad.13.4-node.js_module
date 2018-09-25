@@ -1,5 +1,6 @@
 var os = require('os'); //zaimportowanie wbudowanego modułu wewnętrzengo "os" (dostarczonego razem z pakietem instalacyjnym Node.js)
 var OSinfo = require('../modules/OSInfo'); //zaimportowanie stworzonego modułu OSinfo z katalogu modules
+var timeFormatting = require('../modules/timeFormatting'); // zaimportowanie stworzonego modułu timeFormatting z katalogu modules
 
 //ustawienia odpowiedniego enkodowania przyjmowanych danych
 process.stdin.setEncoding('utf-8');
@@ -18,7 +19,7 @@ process.stdin.on('readable', function() {
             case '/sayhello':
                 process.stdout.write('hello!\n');
                 break;
-            case '/ process.env':
+            case '/process.env':
                 process.stdout.write('\nNode.js Version\n')
                 process.stdout.write(process.version);
                 process.stdout.write('\nOS Version\n');
@@ -26,6 +27,9 @@ process.stdin.on('readable', function() {
                 break;
             case '/getOSinfo':
                 getOSinfo(); //wywołanie funkcji  getOSinfo znajdującej się w zaimportowanym module OSinfo
+                break;
+            case '/timeFormat':
+                timeFormat();//wywołanie funkcji timeFormat
                 break;
             default:
                 process.stderr.write('Wrong instruction!\n');
