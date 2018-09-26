@@ -1,6 +1,6 @@
 var os = require('os');
 
-function timeFormat (seconds) {
+function uptime (seconds) {
     if (seconds < 60) {
         return seconds + ' sek.';
     } else { 
@@ -17,6 +17,6 @@ function timeFormat (seconds) {
         }
     }
 }
-console.log(timeFormat(seconds));
+console.log(uptime(seconds));
 
-exports.timeFormatting = timeFormat; //wyeksportowanie funkcji timeFormat
+exports.timeFormatting = uptime; //wyeksportowanie funkcji uptime
