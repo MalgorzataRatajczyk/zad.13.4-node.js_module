@@ -1,5 +1,5 @@
 var os = require('os');
-
+var timeFormatting = require('timeFormatting'); // zaimportowanie stworzonego modułu timeFormatting z katalogu modules
 function getOSinfo() {
     var type = os.type();
     if(type === 'Darwin') {
